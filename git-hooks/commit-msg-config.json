@@ -1,0 +1,40 @@
+{
+  "commitPatterns": [
+    {
+      "name": "merge",
+      "pattern": "^Merge branch",
+      "description": "Merge commit pattern"
+    },
+    {
+      "name": "jira-ticket",
+      "pattern": "^[A-Z]+-\\d+\\s",
+      "description": "JIRA ticket pattern (e.g., JIRA-1234 )"
+    },
+    {
+      "name": "conventional-commits",
+      "pattern": "^(feat|fix|docs|style|refactor|test|chore)(\\(.+\\))?:\\s",
+      "description": "Conventional commits pattern"
+    }
+  ],
+  "branchPatterns": [
+    {
+      "name": "feature-branch-with-description",
+      "pattern": "(feature|hotfix|bugfix|release|mod|fix)\\/([A-Z]+-\\d+)-(.+)",
+      "ticketGroup": 2,
+      "description": "Feature branch with JIRA ticket and hyphen-separated description"
+    },
+    {
+      "name": "feature-branch-simple",
+      "pattern": "(feature|hotfix|bugfix|release|mod|fix)\\/([A-Z]+-\\d+)$",
+      "ticketGroup": 2,
+      "description": "Simple feature branch with JIRA ticket only"
+    }
+  ],
+  "settings": {
+    "autoPrependTicket": true,
+    "requireTicketInMessage": true,
+    "allowedCommitTypes": ["feat", "fix", "docs", "style", "refactor", "test", "chore"],
+    "minMessageLength": 10,
+    "maxMessageLength": 72
+  }
+} 

@@ -1,0 +1,10 @@
+#!/bin/sh
+# Git Commit Message Hook - Shell Script
+# Copyright (c) 2025 Evgenii Khromov
+# Licensed under the MIT License
+# https://github.com/khromov/commit-msg-hook
+#
+# Usage: commit-msg <commit-msg-file> [config-file]
+# If config-file is not provided, defaults to .git/hooks/commit-msg-config.json
+CONFIG_FILE=${2:-.git/hooks/commit-msg-config.json}
+pwsh -ExecutionPolicy Bypass -NoProfile -File .git/hooks/commit-msg.ps1 $1 "$CONFIG_FILE"
